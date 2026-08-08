@@ -1,5 +1,8 @@
 import AuthForm from "@/app/components/AuthForm";
 
+export function generateStaticParams() {
+    return [{ lang: 'en' }, { lang: 'ar' }];
+}
 
 export default function LoginPage() {
     return (
