@@ -9,6 +9,10 @@ import PopularPackagesSection from "@/app/components/PopularPackagesSection";
 import TourSearchForm from "@/app/components/TourSearchForm";
 import TransportationOptionsSection from "@/app/components/TransportationOptionsSection";
 
+export function generateStaticParams() {
+    return [{ lang: 'en' }, { lang: 'ar' }];
+}
+
 export const statsData = [
   { number: "20+", label: "Years Experience" },
   { number: "100+", label: "Happy Customer" },

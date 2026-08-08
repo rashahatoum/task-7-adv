@@ -6,6 +6,10 @@ import CustomersSaysSection from '@/app/components/CustomersSaysSection';
 import FeaturesSection, { FeatureCard } from '@/app/components/FeaturesSection';
 import Image from 'next/image';
 
+export function generateStaticParams() {
+    return [{ lang: 'en' }, { lang: 'ar' }];
+}
+
 const featuresData: FeatureCard[] = [
 {
     title: "Complete Packages For All Your Wishes",

@@ -12,7 +12,7 @@ interface AuthFormProps {
     onToggleMode?: () => void;
 }
 
-export default function AuthForm({ type, onClose, onToggleMode }: AuthFormProps) {
+export default function AuthForm({type, onClose, onToggleMode }: AuthFormProps) {
     const isSignUp = type === 'signup';
 
     const [formData, setFormData] = useState({
