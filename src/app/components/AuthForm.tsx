@@ -1,24 +1,33 @@
-'use client';
+"use client";
 
-import { X } from 'lucide-react';
-import CustomInput from './CustomInput';
-import CustomButton from './CustomButton';
-import Image from 'next/image';
-import { useState } from 'react';
+import { X } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+import CustomInput from "./CustomInput";
+import CustomButton from "./CustomButton";
+import type { Dictionary } from "@/i18n/dictionaries";
 
 interface AuthFormProps {
-    type: 'login' | 'signup';
+    type: "login" | "signup";
+    dict: Dictionary["auth"];
+    lang: string;
     onClose?: () => void;
     onToggleMode?: () => void;
 }
 
-export default function AuthForm({type, onClose, onToggleMode }: AuthFormProps) {
-    const isSignUp = type === 'signup';
+export default function AuthForm({
+    type,
+    dict,
+    lang,
+    onClose,
+    onToggleMode,
+}: AuthFormProps) {
+    const isSignUp = type === "signup";
 
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        password: '',
+        name: "",
+        email: "",
+        password: "",
         termsAccepted: false,
     });
 
@@ -26,31 +35,28 @@ export default function AuthForm({type, onClose, onToggleMode }: AuthFormProps) 
         const { name, value, type: inputType, checked } = e.target;
         setFormData((prev) => ({
             ...prev,
-            [name]: inputType === 'checkbox' ? checked : value,
+            [name]: inputType === "checkbox" ? checked : value,
         }));
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(`[${isSignUp ? 'SIGN UP' : 'LOGIN'} SUBMITTED]:`, formData);
-        setFormData({
-        name: '',
-        email: '',
-        password: '',
-        termsAccepted: false,
-    });
+        console.log(`[${isSignUp ? "SIGN UP" : "LOGIN"} SUBMITTED]:`, formData);
+        setFormData({ name: "", email: "", password: "", termsAccepted: false });
     };
 
     return (
         <div className="bg-white py-40 px-60 rounded-3xl w-full max-w-md relative shadow-xl">
-            <div className='flex items-center justify-between pb-24'>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 text-left">
-                    {isSignUp ? 'Create Account' : 'Login'}
+            <div className="flex items-center justify-between pb-24">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 text-start">
+                    {isSignUp ? dict.signupTitle : dict.loginTitle}
                 </h2>
+
                 {onClose && (
                     <button
                         onClick={onClose}
-                        className=" text-gray-400 hover:text-gray-600 transition-colors"
+                        aria-label={dict.close}
+                        className="text-gray-400 hover:text-gray-600 transition-colors"
                     >
                         <X size={24} />
                     </button>
@@ -60,64 +66,80 @@ export default function AuthForm({type, onClose, onToggleMode }: AuthFormProps) 
             <form onSubmit={handleSubmit} className="flex flex-col gap-20">
                 {isSignUp && (
                     <CustomInput
-                        label="Name and Surname"
+                        label={dict.name.label}
                         value={formData.name}
                         name="name"
                         onChange={handleChange}
-                        placeholder="Enter your name and surname"
+                        placeholder={dict.name.placeholder}
                         required
                     />
                 )}
+
                 <CustomInput
-                    label="Email Address"
+                    label={dict.email.label}
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Enter your email address"
+                    placeholder={dict.email.placeholder}
                     required
                 />
 
                 <div>
                     <CustomInput
-                        label="Password"
+                        label={dict.password.label}
                         type="password"
                         name="password"
                         value={formData.password}
                         onChange={handleChange}
-                        placeholder="Enter your password"
+                        placeholder={dict.password.placeholder}
                         required
                     />
+
                     {!isSignUp && (
-                        <div className="text-right mt-20">
+                        <div className="text-end mt-20">
                             <a href="#" className="text-xs text-gray-500 hover:underline">
-                                Forgot your password?
+                                {dict.forgotPassword}
                             </a>
                         </div>
                     )}
                 </div>
+
                 {isSignUp && (
                     <div className="flex items-center gap-2 text-xs text-gray-600 mt-1">
-                        <input 
-                        type="checkbox" 
-                        id="terms"
-                        name="termsAccepted"
-                        checked={formData.termsAccepted}
-                        onChange={handleChange} 
-                        required
-                        className="rounded border-gray-300 accent-main-orange" />
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="termsAccepted"
+                            checked={formData.termsAccepted}
+                            onChange={handleChange}
+                            required
+                            className="rounded border-gray-300 accent-main-orange"
+                        />
                         <label htmlFor="terms">
-                            I agree with <a href="#" className="text-main-orange underline">Terms</a> and <a href="#" className="text-main-orange underline">Privacy</a>
+                            {dict.termsPrefix}{" "}
+                            <a href={`/${lang}/terms`} className="text-main-orange underline">
+                                {dict.terms}
+                            </a>{" "}
+                            {dict.and}{" "}
+                            <a href={`/${lang}/privacy`} className="text-main-orange underline">
+                                {dict.privacy}
+                            </a>
                         </label>
                     </div>
                 )}
+
                 <CustomButton
                     type="submit"
                     className="w-full bg-main-orange text-white hover:bg-orange-600 mt-2"
                 >
-                    {isSignUp ? 'Sign Up' : 'Sign In'}
+                    {isSignUp ? dict.signupSubmit : dict.loginSubmit}
                 </CustomButton>
-                <p className="w-full mx-auto text-base text-gray-400 text-center">or</p>
+
+                <p className="w-full mx-auto text-base text-gray-400 text-center">
+                    {dict.or}
+                </p>
+
                 <CustomButton
                     type="button"
                     className="flex gap-24 w-full border border-gray-400 text-gray-400 hover:bg-gray-50 text-sm font-normal"
@@ -128,16 +150,17 @@ export default function AuthForm({type, onClose, onToggleMode }: AuthFormProps) 
                         width={20}
                         height={20}
                     />
-                    {isSignUp ? 'Sign Up with Google' : 'Sign In with Google'}
+                    {isSignUp ? dict.signupWithGoogle : dict.loginWithGoogle}
                 </CustomButton>
             </form>
+
             <p className="text-center text-main-text mt-24">
-                {isSignUp ? 'Already have an account? ' : "Don't have an account? "}
+                {isSignUp ? dict.haveAccount : dict.noAccount}{" "}
                 <button
                     onClick={onToggleMode}
                     className="text-main-orange font-semibold hover:underline"
                 >
-                    {isSignUp ? 'Log In' : 'Sign Up'}
+                    {isSignUp ? dict.goToLogin : dict.goToSignup}
                 </button>
             </p>
         </div>

@@ -1,9 +1,19 @@
 @import "tailwindcss";
 
 @theme inline {
-  --spacing: 1px; 
+  --spacing: 1px;
   --font-open-sans: var(--font-open-sans);
   --font-podcast: var(--font-podcast);
+  --font-cairo: var(--font-cairo);
   --color-main-orange: #FA8B02;
   --color-main-text: #333333;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+html[dir="rtl"] .font-podcast,
+html[dir="rtl"] .font-open-sans {
+  font-family: var(--font-cairo), sans-serif;
 }

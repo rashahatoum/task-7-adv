@@ -30,7 +30,7 @@ export default function TestimonialCard({
             </div>
             <div className="flex flex-col items-start gap-10 h-full">
                 <QuoteIcon className="w-40 h-28 text-[#fa8a0236] self-start" />
-                <p className="text-base md:text-lg text-main-text leading-relaxed font-normal pl-20">
+                <p className="text-base md:text-lg text-main-text leading-relaxed font-normal ps-20">
                     {testimonialText}
                 </p>
                 <QuoteIcon className="w-40 h-28 text-[#fa8a0236] self-end" />

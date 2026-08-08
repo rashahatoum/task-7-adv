@@ -8,6 +8,8 @@ export interface ActivityCardProps {
     price?: number | string;
     schedule?: string;
     capacity?: string;
+    fromLabel?: string;
+    currency?: string;
     imageHeightClass?: string;
     spacingClass?: string;
     gapClass?: string;
@@ -20,6 +22,8 @@ export default function ActivityCard({
     price,
     schedule,
     capacity,
+    fromLabel = "",
+    currency = "€",
     imageHeightClass = "h-[300px]",
     gapClass,
 }: ActivityCardProps) {
@@ -34,12 +38,17 @@ export default function ActivityCard({
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
             </div>
+
             <div className="flex flex-col gap-12">
                 <h3 className="text-2xl font-bold text-main-text">{title}</h3>
+
                 {price && (
                     <div className="flex flex-col gap-10">
                         <p className="text-lg text-main-text font-semibold">
-                            from <span className="text-main-orange font-extrabold text-2xl">{price} €</span>
+                            {fromLabel}{" "}
+                            <span className="text-main-orange font-extrabold text-2xl">
+                                {price} {currency}
+                            </span>
                         </p>
 
                         <div className="flex items-center justify-between text-base text-main-orange font-semibold">
@@ -58,6 +67,7 @@ export default function ActivityCard({
                         </div>
                     </div>
                 )}
+
                 <p className="text-base text-main-text line-clamp-2">
                     {description}
                 </p>

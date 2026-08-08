@@ -30,7 +30,7 @@ function CustomInput({ label, type = "text", ...props }: CustomInputProps) {
                     <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-24 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                        className="absolute inset-e-24 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                     >
                         {showPassword ? <EyeOff size={24} /> : <Eye size={24} />}
                     </button>

@@ -50,7 +50,7 @@ export default function AboutSection({
                     <p className="text-sm md:text-base text-main-text leading-relaxed pb-32">
                         {description}
                     </p>
-                    <div className="grid grid-cols-4 gap-20 lg:gap-50 lg:mr-[10vw] m-auto">
+                    <div className="grid grid-cols-4 gap-20 lg:gap-50 lg:me-[10vw] m-auto">
                         {stats.map((stat, index) => (
                             <div key={index} className="flex flex-col gap-6">
                                 <span className="text-2xl md:text-[32px] font-bold text-main-orange">

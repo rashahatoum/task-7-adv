@@ -35,10 +35,10 @@ export default function SearchSelectField({
     return (
         <div
             className={`relative flex items-start gap-7 px-16 my-16 w-full transition-colors flex-wrap
-                ${showBorder ? "xl:border-r xl:border-main-text" : ""} ${className}`}
+                ${showBorder ? "xl:border-e xl:border-main-text" : ""} ${className}`}
         >
             <div className="text-main-text">{icon}</div>
-            <div className="flex flex-col grow text-left overflow-hidden">
+            <div className="flex flex-col grow text-start overflow-hidden">
                 <label className={`{lg:text-lg text-base text-main-text pb-6 ${labelStyle}}`}>
                     {label}
                 </label>
@@ -61,7 +61,7 @@ export default function SearchSelectField({
                         <select
                             value={value}
                             onChange={(e) => onChange(e.target.value)}
-                            className="text-base text-[#333333c2] bg-transparent outline-none cursor-pointer w-full appearance-none pr-6"
+                            className="text-base text-[#333333c2] bg-transparent outline-none cursor-pointer w-full appearance-none pe-6"
                         >
                             {<option value="" disabled hidden>
                                 {placeholder}
@@ -72,7 +72,7 @@ export default function SearchSelectField({
                                 </option>
                             ))}
                         </select>
-                        <ChevronDown className="w-20 h-20 text-main-text absolute right-0 pointer-events-none" />
+                        <ChevronDown className="w-20 h-20 text-main-text absolute inset-e-0 pointer-events-none" />
                     </div>
                 )}
             </div>

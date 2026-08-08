@@ -1,0 +1,390 @@
+{
+  "meta": {
+    "title": "Tuscany | Discover & Book Your Next Adventure",
+    "description": "Explore popular destinations, book guided tours, rent bikes, and plan your dream trip to Tuscany with our all-in-one travel platform."
+  },
+
+  "nav": {
+    "items": [
+      { "label": "Home", "href": "/" },
+      { "label": "About Us", "href": "/about-us" },
+      { "label": "Tour Packages", "href": "/#packages" },
+      { "label": "Contact Us", "href": "/contact-us" }
+    ],
+    "login": "Login",
+    "signUp": "Sign Up",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+
+  "common": {
+    "from": "from",
+    "currency": "€",
+    "perDay": "/day",
+    "bookNow": "Book Now",
+    "contactUs": "Contact Us",
+    "search": "Search",
+    "previous": "Previous",
+    "next": "Next"
+  },
+
+  "home": {
+    "hero": {
+      "title": "Enjoy in the best way!",
+      "subtitle": "Enjoy our services for your trip anytime"
+    },
+
+    "destinations": {
+      "title": "Explore Our Popular Destinations",
+      "items": [
+        {
+          "image": "/assets/imgs/lucca-bike.png",
+          "title": "Lucca Bike Tour",
+          "price": 34,
+          "schedule": "EVERY DAY",
+          "capacity": "3-10 PP",
+          "description": "A tour of the city and its surroundings led by a professional guide ..."
+        },
+        {
+          "image": "/assets/imgs/wine-tasting.png",
+          "title": "Wine tasting In Tuscany",
+          "price": 34,
+          "schedule": "MONDAY",
+          "capacity": "10-30 PP",
+          "description": "The real magic is here where you can enjoy the best Tuscan wine and eat ..."
+        },
+        {
+          "image": "/assets/imgs/cinque-terre.png",
+          "title": "Cinque Terre Tour",
+          "price": 34,
+          "schedule": "TO BE DECIDED",
+          "capacity": "10-50 PP",
+          "description": "Visiting the 5 Terre is a must, and you can never go there enough ..."
+        },
+        {
+          "image": "/assets/imgs/siena.png",
+          "title": "Siena and Surroundings",
+          "price": 34,
+          "schedule": "TO BE DECIDED",
+          "capacity": "5-10 PP",
+          "description": "Visit the beautiful Siena and the cities that surround it to experience ..."
+        },
+        {
+          "image": "/assets/imgs/lucca-bike.png",
+          "title": "Lucca Bike Tour",
+          "price": 34,
+          "schedule": "EVERY DAY",
+          "capacity": "3-10 PP",
+          "description": "A tour of the city and its surroundings led by a professional guide ..."
+        },
+        {
+          "image": "/assets/imgs/wine-tasting.png",
+          "title": "Wine tasting In Tuscany",
+          "price": 34,
+          "schedule": "MONDAY",
+          "capacity": "10-30 PP",
+          "description": "The real magic is here where you can enjoy the best Tuscan wine and eat ..."
+        },
+        {
+          "image": "/assets/imgs/cinque-terre.png",
+          "title": "Cinque Terre Tour",
+          "price": 34,
+          "schedule": "TO BE DECIDED",
+          "capacity": "10-50 PP",
+          "description": "Visiting the 5 Terre is a must, and you can never go there enough ..."
+        },
+        {
+          "image": "/assets/imgs/siena.png",
+          "title": "Siena and Surroundings",
+          "price": 34,
+          "schedule": "TO BE DECIDED",
+          "capacity": "5-10 PP",
+          "description": "Visit the beautiful Siena and the cities that surround it to experience ..."
+        }
+      ]
+    },
+
+    "about": {
+      "subTitle": "WELCOME TO OUR SITE!",
+      "title": "We are the best company for your visit",
+      "description": "After decades of experience, and a whole life in Lucca, we offer you the most complete tourism service in the city. In addition to having bikes and rickshaws to have as much fun as you want, you have the choice of tour guides with whom to tour and drivers for your every need! We offer packages in the way that you get the most at the lowest price. Book with us and we will always be available for you!"
+    },
+
+    "stats": [
+      { "number": "20+", "label": "Years Experience" },
+      { "number": "100+", "label": "Happy Customer" },
+      { "number": "15+", "label": "Choice of Services" },
+      { "number": "10+", "label": "Professional Guides" }
+    ],
+
+    "offer": {
+      "title": "Get Special Offers for Organizations",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "button": "Contact Us"
+    },
+
+    "transportation": [
+      {
+        "image": "/assets/imgs/Bike.png",
+        "title": "Bike and rickshaw rental",
+        "description": "Book your quality vehicle quickly for an hour or all day!"
+      },
+      {
+        "image": "/assets/imgs/Guided.png",
+        "title": "Guided tour of the countryside",
+        "description": "Live the real Lucchese experience by visiting the suburbs by bike!"
+      },
+      {
+        "image": "/assets/imgs/PackageCard4.png",
+        "title": "Taxi and NCC service",
+        "description": "Do you need not only a bike but also a driver? Then you have found the right place!"
+      },
+      {
+        "image": "/assets/imgs/Bus.png",
+        "title": "Bus Package",
+        "description": "Do you need not only a bike but also a driver? Then you have found the right place!"
+      }
+    ],
+
+    "booking": {
+      "title": "Book Now Bike"
+    },
+
+    "packages": {
+      "title": "The Most Popular Packages",
+      "items": [
+        {
+          "id": 1,
+          "image": "/assets/imgs/PackageCard1.png",
+          "title": "BIKE / RICKSHAW",
+          "price": 10,
+          "features": [
+            { "icon": "calendar", "text": "Your bike for a day" },
+            { "icon": "cityMap", "text": "City App" },
+            { "icon": "discount", "text": "Discount on Rickshaw" },
+            { "icon": "support", "text": "Guaranteed Support" }
+          ]
+        },
+        {
+          "id": 2,
+          "image": "/assets/imgs/PackageCard2.png",
+          "title": "BIKE TOURS",
+          "price": 30,
+          "features": [
+            { "icon": "mountain", "text": "A Mountain Bike Included" },
+            { "icon": "guide", "text": "A Guide For You" },
+            { "icon": "water", "text": "Bottle of water" },
+            { "icon": "support", "text": "Guaranteed Support" }
+          ]
+        },
+        {
+          "id": 3,
+          "image": "/assets/imgs/PackageCard3.png",
+          "title": "BUS TRIPS",
+          "price": 45,
+          "features": [
+            { "icon": "ticket", "text": "Park ticket" },
+            { "icon": "bus", "text": "Return bus" },
+            { "icon": "companion", "text": "Companion" },
+            { "icon": "support", "text": "Guaranteed Support" }
+          ]
+        },
+        {
+          "id": 4,
+          "image": "/assets/imgs/PackageCard4.png",
+          "title": "TRANSFER",
+          "price": 10,
+          "features": [
+            { "icon": "driver", "text": "Personal Driver" },
+            { "icon": "location", "text": "Wherever You Want" },
+            { "icon": "price", "text": "At the best price" },
+            { "icon": "support", "text": "Guaranteed Support" }
+          ]
+        }
+      ]
+    },
+
+    "testimonials": {
+      "title": "Happy Customers Says",
+      "items": [
+        {
+          "image": "/assets/imgs/Lyod-Gomez.png",
+          "name": "Lyod Gomez",
+          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure"
+        },
+        {
+          "image": "/assets/imgs/Lyod-Gomez.png",
+          "name": "Lyod Gomez",
+          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure"
+        },
+        {
+          "image": "/assets/imgs/Lyod-Gomez.png",
+          "name": "Lyod Gomez",
+          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure"
+        },
+        {
+          "image": "/assets/imgs/Lyod-Gomez.png",
+          "name": "Lyod Gomez",
+          "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure"
+        }
+      ]
+    }
+  },
+
+  "about": {
+    "hero": {
+      "title": "Our team cares about your full relax",
+      "subtitle": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
+    },
+    "viewPackages": "View Our Tour Packages",
+    "section": {
+      "subTitle": "WELCOME TO OUR SITE!",
+      "title": "We Are The Center Of Lucca To Offer You The Best",
+      "description": "We are right in the center of Lucca to offer you the real city life! With years of experience in practically every tourism sector, with us you can find complete packages at the lowest price, to travel and learn and have fun all without worries and without stress. What are you waiting for, book a bright evening, a trip to beautiful Tuscany or a personal tour for you!"
+    },
+    "features": [
+      { "icon": "map", "title": "Complete Packages For All Your Wishes" },
+      { "icon": "experience", "title": "Over 30 Years Of Experience" },
+      { "icon": "guide", "title": "Expert Guides For You" },
+      { "icon": "bestPrice", "title": "Guaranteed fun at the best price" }
+    ]
+  },
+
+  "search": {
+    "tabs": {
+      "public": "Public Tours",
+      "private": "Private Tours"
+    },
+    "people": {
+      "label": "Number of people",
+      "placeholder": "Choose number",
+      "options": [
+        { "value": "1", "label": "1 Person" },
+        { "value": "2", "label": "2 People" },
+        { "value": "3-5", "label": "3-5 People" },
+        { "value": "6+", "label": "6+ People" }
+      ]
+    },
+    "date": { "label": "Date" },
+    "time": { "label": "Time" },
+    "tour": {
+      "label": "Tour",
+      "placeholder": "Select Tour",
+      "options": [
+        { "value": "lucca-bike", "label": "Lucca Bike Tour" },
+        { "value": "wine-tasting", "label": "Wine Tasting Tour" },
+        { "value": "cinque-terre", "label": "Cinque Terre Tour" }
+      ]
+    },
+    "transportation": {
+      "label": "Transportation",
+      "placeholder": "Select Transportation",
+      "options": [
+        { "value": "bus", "label": "Bus" },
+        { "value": "van", "label": "Private Van" },
+        { "value": "car", "label": "Car" }
+      ]
+    }
+  },
+
+  "bookingForm": {
+    "name": { "label": "Name and Surname", "placeholder": "Enter your name and surname" },
+    "email": { "label": "Email Address", "placeholder": "Enter your email address" },
+    "phone": { "label": "Telephone Number", "placeholder": "Enter your telephone number" },
+    "service": {
+      "label": "Service Type",
+      "placeholder": "Select the service types",
+      "options": [
+        { "value": "rental", "label": "Bike Rental" },
+        { "value": "tour", "label": "Guided Tour" }
+      ]
+    },
+    "date": { "label": "Date" },
+    "time": { "label": "Time" },
+    "submit": "Book Now"
+  },
+
+  "auth": {
+    "loginTitle": "Login",
+    "signupTitle": "Create Account",
+    "name": { "label": "Name and Surname", "placeholder": "Enter your name and surname" },
+    "email": { "label": "Email Address", "placeholder": "Enter your email address" },
+    "password": { "label": "Password", "placeholder": "Enter your password" },
+    "forgotPassword": "Forgot your password?",
+    "termsPrefix": "I agree with",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy",
+    "loginSubmit": "Sign In",
+    "signupSubmit": "Sign Up",
+    "or": "or",
+    "loginWithGoogle": "Sign In with Google",
+    "signupWithGoogle": "Sign Up with Google",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "goToLogin": "Log In",
+    "goToSignup": "Sign Up",
+    "close": "Close"
+  },
+
+  "footer": {
+    "lists": [
+      {
+        "title": "Services",
+        "items": [
+          { "label": "Bike and Rickshaw rental" },
+          { "label": "Guided Tours of Lucca" },
+          { "label": "Guided Bike Tour of Lucca" },
+          { "label": "Trip In The Tuscan Hills" },
+          { "label": "Transportation With Luxury Cars" },
+          { "label": "Wine Tours By Bus With Guide" }
+        ]
+      },
+      {
+        "title": "Home",
+        "items": [
+          { "label": "Home" },
+          { "label": "About Us" },
+          { "label": "Tour Packages" },
+          { "label": "Services" }
+        ]
+      },
+      {
+        "title": "Help",
+        "items": [
+          { "label": "Terms of Use" },
+          { "label": "Privacy Policy" }
+        ]
+      },
+      {
+        "title": "Contacts",
+        "items": [
+          { "label": "Piazza Napoleone, Lucca, Tuscany", "icon": "location" },
+          { "label": "+39 346 368 5708", "icon": "phone" },
+          { "label": "italiainlimo@gmail.com", "icon": "mail" }
+        ]
+      },
+      {
+        "title": "Social Media",
+        "isSocial": true,
+        "items": [
+          { "icon": "twitter" },
+          { "icon": "facebook" },
+          { "icon": "instagram" }
+        ]
+      }
+    ],
+    "copyright": "Copyright © 2022. All rights reserved."
+  },
+
+  "notFound": {
+    "title": "Under Development",
+    "subtitle": "404 - Page Not Found",
+    "description": "Oops! The page you are looking for is currently being built. We are working hard to bring it to you soon.",
+    "backHome": "Back To Home"
+  },
+
+  "loading": {
+    "text": "Loading..."
+  }
+}

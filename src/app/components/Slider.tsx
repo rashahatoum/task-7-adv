@@ -7,40 +7,50 @@ interface SliderProps {
     title: string;
     children: React.ReactNode;
     className?: string;
+    prevLabel: string;
+    nextLabel: string;
 }
 
-export default function Slider({ title, children, className }: SliderProps) {
+export default function Slider({
+    title,
+    children,
+    className,
+    prevLabel,
+    nextLabel,
+}: SliderProps) {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-const handleScroll = (direction: "left" | "right") => {
-        if (!scrollContainerRef.current) return;
-
+    const handleScroll = (direction: "prev" | "next") => {
         const container = scrollContainerRef.current;
-        const firstCard = container.children[0] as HTMLElement;
-        const secondCard = container.children[1] as HTMLElement;
+        if (!container) return;
 
+        const firstCard = container.children[0] as HTMLElement | undefined;
+        const secondCard = container.children[1] as HTMLElement | undefined;
         if (!firstCard) return;
 
-        const scrollAmount = secondCard
-            ? secondCard.offsetLeft - firstCard.offsetLeft
+        const isRtl = getComputedStyle(container).direction === "rtl";
+        const sign = isRtl ? -1 : 1;
+
+        const step = secondCard
+            ? Math.abs(secondCard.offsetLeft - firstCard.offsetLeft)
             : firstCard.offsetWidth;
 
-        const currentScroll = container.scrollLeft;
-        const maxScroll = container.scrollWidth - container.clientWidth;
-        
-        const tolerance = 5; 
+        const max = container.scrollWidth - container.clientWidth;
+        const scrollLeft = container.scrollLeft;
+        const progress = isRtl ? Math.abs(scrollLeft) : scrollLeft;
+        const tolerance = 5;
 
-        if (direction === "right") {
-            if (currentScroll >= maxScroll - tolerance) {
+        if (direction === "next") {
+            if (progress >= max - tolerance) {
                 container.scrollTo({ left: 0, behavior: "smooth" });
             } else {
-                container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+                container.scrollBy({ left: sign * step, behavior: "smooth" });
             }
         } else {
-            if (currentScroll <= tolerance) {
-                container.scrollTo({ left: maxScroll, behavior: "smooth" });
+            if (progress <= tolerance) {
+                container.scrollTo({ left: sign * max, behavior: "smooth" });
             } else {
-                container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+                container.scrollBy({ left: -sign * step, behavior: "smooth" });
             }
         }
     };
@@ -54,24 +64,25 @@ const handleScroll = (direction: "left" | "right") => {
 
                 <div className="flex items-center justify-center gap-10">
                     <button
-                        onClick={() => handleScroll("left")}
-                        aria-label="Previous"
-                        className=" flex items-center justify-center
-                        w-50 h-50 rounded-full bg-[#EFEFEF] hover:bg-main-orange hover:text-white transition-colors duration-200"
-                    >
-                        <ChevronLeft />
-                    </button>
-
-                    <button
-                        onClick={() => handleScroll("right")}
-                        aria-label="Next"
+                        onClick={() => handleScroll("prev")}
+                        aria-label={prevLabel}
                         className="flex items-center justify-center
                         w-50 h-50 rounded-full bg-[#EFEFEF] hover:bg-main-orange hover:text-white transition-colors duration-200"
                     >
-                        <ChevronRight />
+                        <ChevronLeft className="rtl:rotate-180" />
+                    </button>
+
+                    <button
+                        onClick={() => handleScroll("next")}
+                        aria-label={nextLabel}
+                        className="flex items-center justify-center
+                        w-50 h-50 rounded-full bg-[#EFEFEF] hover:bg-main-orange hover:text-white transition-colors duration-200"
+                    >
+                        <ChevronRight className="rtl:rotate-180" />
                     </button>
                 </div>
             </div>
+
             <div
                 ref={scrollContainerRef}
                 className={`flex items-start justify-start overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-none] [&::-webkit-scrollbar]:hidden ${className || ""}`}

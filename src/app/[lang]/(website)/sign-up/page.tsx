@@ -1,13 +1,13 @@
 import AuthForm from "@/app/components/AuthForm";
+import { getDictionary, getLocale } from "@/i18n/dictionaries";
 
-export function generateStaticParams() {
-    return [{ lang: 'en' }, { lang: 'ar' }];
-}
+export default async function SignupPage() {
+    const dict = await getDictionary();
+    const lang = await getLocale();
 
-export default function SignupPage() {
     return (
         <main className="min-h-screen flex items-center justify-center bg-gray-50">
-            <AuthForm type="signup"/>
+            <AuthForm type="signup" dict={dict.auth} lang={lang} />
         </main>
     );
 }

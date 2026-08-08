@@ -1,23 +1,9 @@
-'use client';
+import AuthModal from "@/app/components/AuthModal";
+import { getDictionary, getLocale } from "@/i18n/dictionaries";
 
-import AuthForm from '@/app/components/AuthForm';
-import { useRouter } from 'next/navigation';
+export default async function SignupModalPage() {
+    const dict = await getDictionary();
+    const lang = await getLocale();
 
-
-export default function LoginModal() {
-    const router = useRouter();
-
-    const handleClose = () => {
-        router.back();
-    };
-
-    return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-            <AuthForm 
-                type="signup" 
-                onClose={handleClose} 
-                onToggleMode={() => router.replace('login')} 
-            />
-        </div>
-    );
+    return <AuthModal type="signup" dict={dict.auth} lang={lang} />;
 }
