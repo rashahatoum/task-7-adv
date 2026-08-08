@@ -46,7 +46,7 @@ export default function AuthForm({
     };
 
     return (
-        <div className="bg-white py-40 px-60 rounded-3xl w-full max-w-md relative shadow-xl">
+        <div className="bg-white lg:py-40 lg:px-60 py-20 px-15 mx-[10vw] rounded-3xl w-full max-w-md relative shadow-xl">
             <div className="flex items-center justify-between pb-24">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 text-start">
                     {isSignUp ? dict.signupTitle : dict.loginTitle}
